@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, Iterable, List, Tuple
+from typing import Any, Iterable, Tuple
 
 from typing_extensions import Protocol
 
@@ -70,7 +70,7 @@ def topological_sort(variable: Variable) -> Iterable[Variable]:
     # raise NotImplementedError("Need to implement for Task 1.4")
     visited = set()
     order = []
-    
+
     def dfs(v: Variable) -> None:
         if v.unique_id in visited or v.is_constant():
             return
@@ -78,7 +78,7 @@ def topological_sort(variable: Variable) -> Iterable[Variable]:
         for parent in v.parents:
             dfs(parent)
         order.append(v)
-    
+
     dfs(variable)
     return reversed(order)
 

@@ -166,7 +166,7 @@ class Sigmoid(ScalarFunction):
         # TODO: Implement for Task 1.4.
         # raise NotImplementedError("Need to implement for Task 1.4")
         (result,) = ctx.saved_values
-        return d_output * result * (1 - result)
+        return float(d_output * result * (1 - result))
 
 
 class ReLU(ScalarFunction):
@@ -203,7 +203,7 @@ class Exp(ScalarFunction):
         # TODO: Implement for Task 1.4.
         # raise NotImplementedError("Need to implement for Task 1.4")
         (result,) = ctx.saved_values
-        return d_output * result
+        return float(d_output * result)
 
 
 class LT(ScalarFunction):
